@@ -7,7 +7,7 @@ def win():
     victory_win.setText("Ти вгадав")
     victory_win.exec_()
 
-def loose():
+def lose():
     loose = QMessageBox()
     loose.setText("Ти не вгадав")
     loose.exec_()
@@ -16,15 +16,15 @@ def loose():
 app = QApplication([])
 
 main_wind = QWidget()
-main_wind.setWindowTitle("Конкурс від Crazy People")
+main_wind.setWindowTitle("Конкурс від BuzzFeed")
 main_wind.resize(400,200)
 
-question = QLabel("Коли придумали Python 3000?")
+question = QLabel("Коли створили гру Genshin Impact")
 
-btn1 = QRadioButton("2005")
-btn2 = QRadioButton("2010")
-btn3 = QRadioButton("2015")
-btn4 = QRadioButton("2003")
+btn1 = QRadioButton("2018")
+btn2 = QRadioButton("2019")
+btn3 = QRadioButton("2020")
+btn4 = QRadioButton("2021")
 
 main_layout = QVBoxLayout()
 
@@ -43,10 +43,10 @@ main_layout.addLayout(layoutH1)
 main_layout.addLayout(layoutH2)
 main_layout.addLayout(layoutH3)
 
-btn1.clicked.connect(win)
-btn2.clicked.connect(loose)
-btn3.clicked.connect(loose)
-btn4.clicked.connect(loose)
+btn1.clicked.connect(lose)
+btn2.clicked.connect(lose)
+btn3.clicked.connect(win)
+btn4.clicked.connect(lose)
 
 
 main_wind.setLayout(main_layout)
